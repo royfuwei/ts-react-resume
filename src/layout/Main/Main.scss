@@ -1,4 +1,6 @@
-body {
-    height: 100vh;
-    // background-color: aquamarine;
+.main {
+    position: absolute;
+    height: 100%;
+    display: flex; /*使物件依序排列*/
+    flex-direction: column; /*使物件垂直排列*/
 }

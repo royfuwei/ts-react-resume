@@ -8,7 +8,6 @@ import { ProgressDIY } from '../../component/ProgressDIY';
 import { useRWD } from '../../hook/useRWD';
 import { TestForm } from '../../component/TestForm';
 import { useParams } from 'react-router';
-import CommonAppBar from '../../component/AppBar';
 
 const Context = createContext('sun nameA');
 

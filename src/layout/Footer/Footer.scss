@@ -1,11 +1,22 @@
 footer {
-    // position: absolute;
-    bottom: 0;
-    width: 100%;
+    width: 100vw;
     min-height: 10vh;
-    background-color: azure;
+    max-height: 150px;
+    background-color: #FBFCFC;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: space-evenly;
+
+    .footer {
+        position: relative;
+        // top: 0;
+        width: 90vw;
+        color: #ABB2B9;
+        border-style: solid;
+        border-bottom: 10px black;
+    }
+    .footer-font {
+        color: #ABB2B9;
+    }
 }

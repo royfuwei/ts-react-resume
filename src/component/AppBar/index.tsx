@@ -39,11 +39,6 @@ const pages: PageConfig[] = [
     name: 'Projects',
     path: '/project',
   },
-  {
-    key: 'test',
-    name: 'Test',
-    path: '/test',
-  },
 ];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -67,8 +62,16 @@ const AppBarComponent = () => {
     setAnchorElUser(null);
   };
 
+  const mainStyle = {
+    fontFamily: 'Arial,Helvetica,sans-serif',
+    letterSpacing: '.1rem',
+    bgcolor: "#FBFCFC",
+    color: "#7B7D7D",
+    boxShadow: 0,
+  };
+
   return (
-    <AppBar position="static" color="primary" /* sx={{ bgcolor: "gray" }} */>
+    <AppBar position="static" color="primary" sx={{ bgcolor: mainStyle.bgcolor, color: mainStyle.color, boxShadow: mainStyle.boxShadow }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -80,9 +83,9 @@ const AppBarComponent = () => {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              fontFamily: mainStyle.bgcolor,
               fontWeight: 700,
-              letterSpacing: '.3rem',
+              letterSpacing: mainStyle.letterSpacing,
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -141,9 +144,9 @@ const AppBarComponent = () => {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: mainStyle.fontFamily,
               fontWeight: 700,
-              letterSpacing: '.3rem',
+              letterSpacing: mainStyle.letterSpacing,
               color: 'inherit',
               textDecoration: 'none',
             }}
@@ -160,7 +163,7 @@ const AppBarComponent = () => {
                 }}
                 component={RouterLink}
                 to={path}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{ my: 2, color: mainStyle.color, display: 'block' }}
               >
                 {name}
               </Button>

@@ -1,10 +1,11 @@
-import CommonAppBar from "../../component/AppBar";
+import AppBarComponent from "../../component/AppBar";
+import './Header.scss';
 
 export const HeaderLayout = () => {
 
   return (
     <header>
-      <CommonAppBar/>
+      <AppBarComponent/>
     </header>
   );
 };
