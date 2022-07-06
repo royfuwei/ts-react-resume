@@ -25,7 +25,7 @@ export const genRouteConfigs = (): RouteConfigType[] => [
     {
         key: 'resume',
         path: '/resume',
-        Element: TestPage,
+        Element: ResumePage,
     },
     {
         key: 'test',
