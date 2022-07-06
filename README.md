@@ -1,3 +1,31 @@
+# Ts React Resume/CV
+
+### setup webpack
+
+```sh
+npm install --save-dev webpack webpack-cli webpack-dev-server
+```
+
+### .env
+```sh
+npm install dotenv --save
+```
+
+> not working
+
+### UI
+
+#### MUI
+```
+npm install @mui/material @emotion/react @emotion/styled
+```
+
+### package
+```
+npm i react-query
+```
+
+---
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
