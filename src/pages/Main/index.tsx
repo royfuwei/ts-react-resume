@@ -20,7 +20,9 @@ export const MainPage = () => {
                                     md: '30vw'
                                 },
                                 fontSize: 'calc(36px + 5vmin);'
-                            }} src={avatar} />
+                            }} style={{
+                                border: '4px solid #FBFCFC'
+                             }} src={avatar} />
                         </div>
                     </Grid>
 
