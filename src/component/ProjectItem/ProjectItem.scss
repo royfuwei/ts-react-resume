@@ -1,0 +1,115 @@
+.ProjectItem {
+    position: relative;
+
+    ul {
+        &:before {
+            background-color: rgb(85, 120, 170);
+            position: absolute;
+            content: '';
+            top: 0px;
+            width: 0.2rem;
+            left: 2rem;
+            height: 100%;
+            margin-left: -1rem;
+        }
+    }
+
+    .pic-content {
+        position: relative;
+        /* display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around; */
+        margin: 20px 0 10px 0;
+
+        
+        .content-skill {
+            position: relative;
+            padding: 0 0 40px 0;
+            display: flex;
+            justify-content: end;
+        }
+
+        .content-image {
+            min-height: 240px;
+            background-color: bisque;
+        }
+
+        .content-info {
+            position: relative;
+            padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            justify-content: space-between;
+
+            font-size: calc(8px + 1vmin);
+            color: #424949;
+            // background-color:aquamarine;
+            
+
+            .info-top {
+                position: relative;
+
+                .info-title {
+                    font-size: calc(12px + 1vmin);
+                    font-weight: bold;
+                    color: #424949;
+                }
+
+                .info-subTitle {
+                    font-size: calc(8px + 1vmin);
+                    color: #626567;
+                    margin-top: 10px;
+                }
+            }
+
+            .info-detail {
+                margin-left: 5px;
+                margin-right: 10px;
+            }
+        }
+
+        .info-time {
+            position: relative;
+            display: inline-block;
+            margin: 5px 2px 16px 0px;
+            padding: 6px 12px;
+            text-decoration: none; 
+            &::after {
+                position: absolute;
+                content: '';
+                height: 2px;
+                bottom: 0px;
+                margin: 0 auto;
+                left: -5px;
+                right: 10px;
+                width: 90%;
+                background: rgb(85, 120, 170);
+
+                -o-transition:.5s;
+                -ms-transition:.5s;
+                -moz-transition:.5s;
+                -webkit-transition:.5s;
+                transition:.5s;
+            }
+        }
+
+        .timeline-point {
+            background-color: rgb(255, 255, 255);
+            // transition: all 0.2s ease-in 0s;
+            outline:  rgb(85, 120, 170) solid 0.5rem;
+            display: inline-block;
+            margin: 1rem 0.5rem 0.5rem -0.5rem;
+            position: absolute;
+            top: 0px;
+            left: -1.15rem;
+            width: 0.5rem;
+            height: 0.5rem;
+        }
+    }
+
+    .skill-chip {
+        margin: 2px;
+    }
+}
