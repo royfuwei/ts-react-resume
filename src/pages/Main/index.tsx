@@ -1,7 +1,19 @@
 import { Avatar, Container, Grid } from '@mui/material';
 import avatar from '../../assets/images/avatar.jpg';
+import ReactMarkdown from 'react-markdown'
 
 import './MainPage.scss';
+import remarkGfm from 'remark-gfm';
+
+
+const aboutMe = {
+    description: `
+大家好...
+
+我是一個有親和力、但有點內向、勇於挑戰、有積極行動力和責任感的人。
+    `,
+}
+
 
 export const MainPage = () => {
     return (
@@ -36,7 +48,12 @@ export const MainPage = () => {
                                     關於我
                                 </div>
                                 <div className="main-info-detail">
-                                    大家好...
+                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                        { aboutMe.description }
+                                    </ReactMarkdown>
+                                </div>
+                                <div className="main-info-link">
+                                    
                                 </div>
                             </div>
                             <br />
