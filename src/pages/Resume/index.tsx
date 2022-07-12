@@ -3,6 +3,8 @@ import { PageTitleComponent } from '../../component/PageTitle';
 import { InfoTimelineComponent } from '../../component/InfoTimeline';
 import { InfoTimelineInterface } from '../../domain/interface/infoTimeline';
 import './ResumePage.scss';
+import { SkillGroupComponent } from '../../component/SkillGroup';
+import { SkillGroupInterface } from '../../domain/interface/skill.interface';
 
 const educationConfig: InfoTimelineInterface = {
     title: '學歷',
@@ -71,12 +73,51 @@ const workConfig: InfoTimelineInterface = {
     ],
 };
 
-export const ResumePage = () => {
+const skillGroupConfig: SkillGroupInterface[] = [
+    {
+        title: '後端程式語言與框架',
+        description: '',
+        content: [
+            {
+                name: 'Nodejs',
+                description: `
+- 熟悉Node.js 後端開發，使用Nestjs/Express 作為API開發框架(TypeScript)。
+                `,
+                rate: 50,
+            },
+            {
+                name: 'Golang',
+                description: `
+- 熟悉Golang(Go) 後端開發，使用Gin 作為API開發框架。
+                `,
+                rate: 50,
+            }
+        ],
+        chips: [],
+    },
+    {
+        title: '前端程式語言與框架',
+        description: `
+網頁程式設計:
+        `,
+        content: [
+            {
+                name: 'HTML',
+                description: '',
+                rate: 50,
+            }
+        ],
+        chips: [],
+    },
+];
 
+export const ResumePage = () => {
     return (
         <div className="resume-page">
             <Container>
                 <PageTitleComponent name='Resume'/>
+                <SkillGroupComponent content={skillGroupConfig}/>
+                <hr />
                 <InfoTimelineComponent content={workConfig} />
                 <hr />
                 <InfoTimelineComponent content={educationConfig} />
