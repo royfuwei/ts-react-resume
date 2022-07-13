@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material';
+import { Chip, Grid } from '@mui/material';
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { ICompoenetBaseProps } from '../../domain/interface/compoenents/base';
@@ -16,14 +16,14 @@ export const contentConfig: SkillGroupInterface[] = [
                 description: `
 - 熟悉Node.js 後端開發，使用Nestjs/Express 作為API開發框架(TypeScript)。
                 `,
-                rate: 50,
+                rating: 50,
             },
             {
                 name: 'Golang',
                 description: `
 - 熟悉Golang(Go) 後端開發，使用Gin 作為API開發框架。
                 `,
-                rate: 50,
+                rating: 50,
             }
         ],
         chips: [],
@@ -37,7 +37,7 @@ export const contentConfig: SkillGroupInterface[] = [
             {
                 name: 'HTML',
                 description: '',
-                rate: 50,
+                rating: 50,
             }
         ],
         chips: [],
@@ -46,16 +46,23 @@ export const contentConfig: SkillGroupInterface[] = [
 
 
 export const SkillGroupComponent = ({  name = '專長', content = contentConfig, }: ICompoenetBaseProps<SkillGroupInterface[]>) => {
+    const getChipHtml = (skills: string[]) => skills.map(
+        skill => ( 
+            <div key={skill} className="skill-chip">
+                <Chip label={skill} size='small' variant="outlined"/>
+            </div>
+        )
+    );
     const genSkillItemsContent = (content: SkillItemInterface[]) => {
-        return content.map(({ name, rate, description}) => {
+        return content.map(({ name, rating, description}, index) => {
             return (
-                <Grid className="item-grid" item xs={12} md={6}>
+                <Grid key={index + name} className="item-grid" item xs={12} md={6}>
                     <div className="item-top">
                         <div className="item-name">
                             { name }
                         </div>
                         <div className="item-rate">
-                            <HoverRating/>
+                            <HoverRating rating={ rating }/>
                         </div>
                     </div>
                     <div className="item-description">
@@ -69,8 +76,8 @@ export const SkillGroupComponent = ({  name = '專長', content = contentConfig,
         });
     };
     const genContentHtml = () => {
-        return content.map(({ title, description, content}) => (
-            <div className='sg-content'>
+        return content.map(({ title, description, content, chips}, index) => (
+            <div key={index + title} className='sg-content'>
                 <div className='content-title'>
                     { title }
                 </div>
@@ -81,6 +88,11 @@ export const SkillGroupComponent = ({  name = '專長', content = contentConfig,
                 </div>
                 <Grid className='content-skill-items' container spacing={{ xs: 1, md: 2}}>
                     { genSkillItemsContent(content) }
+                    <Grid item md={12} xs={12}>
+                        <div className="content-chip" >
+                            { getChipHtml(chips) }
+                        </div>
+                    </Grid>
                 </Grid>
             </div>
         ))

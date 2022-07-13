@@ -7,6 +7,6 @@ export interface SkillGroupInterface {
 
 export interface SkillItemInterface {
     name: string;
-    rate: number;
+    rating: number;
     description: string;
 }

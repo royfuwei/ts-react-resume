@@ -1,21 +1,26 @@
+import './MainPage.scss';
 import { Avatar, Container, Grid } from '@mui/material';
 import avatar from '../../assets/images/avatar.jpg';
 import ReactMarkdown from 'react-markdown'
-
-import './MainPage.scss';
 import remarkGfm from 'remark-gfm';
-
-
-const aboutMe = {
-    description: `
-大家好...
-
-我是一個有親和力、但有點內向、勇於挑戰、有積極行動力和責任感的人。
-    `,
-}
+import { UserService } from '../../core/user/user.service';
+import { useEffect, useState } from 'react';
 
 
 export const MainPage = () => {
+    const userService = new UserService();
+    const [ aboutMe, setAboutMe ] = useState(`
+大家好...
+    `);
+    const asyncData = async () => {
+        const data = await userService.getAboutMe();
+        setAboutMe(data.aboutMe);
+    };
+
+    useEffect(() => {
+        asyncData();
+    }, []);
+
     return (
         <div className="main-page">
             <Container>
@@ -49,7 +54,7 @@ export const MainPage = () => {
                                 </div>
                                 <div className="main-info-detail">
                                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                        { aboutMe.description }
+                                        { aboutMe }
                                     </ReactMarkdown>
                                 </div>
                                 <div className="main-info-link">

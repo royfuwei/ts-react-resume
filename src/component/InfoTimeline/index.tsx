@@ -7,9 +7,9 @@ import './InfoTimeline.scss';
 export const InfoTimelineComponent = ({ content = { title: '', content: [],} }: ICompoenetBaseProps<InfoTimelineInterface>) => {
     const getContentHtml = () => {
         return content.content.map(
-            ({ title, subTitle, detail, startStr, endStr }) => {
+            ({ title, subTitle, detail, startStr, endStr }, index) => {
                 return (
-                    <div className='ttl-content'>
+                    <div key={index + title} className='ttl-content'>
                         <Grid container spacing={{ xs: 1, md: 2}}>
                             <Grid item xs={12} md={3}>
                                 <div className='ttl-content-time'>

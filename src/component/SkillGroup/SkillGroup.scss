@@ -27,9 +27,17 @@
             // background-color: antiquewhite;
             margin: 10px 0 20px 0;
 
+            .content-chip {
+                position: relative;
+                padding: 0 40px 40px 0;
+                display: flex;
+                justify-content: end;
+                flex-wrap: wrap;
+            }
+
             .item-grid {
                 position: relative;
-                margin: 5px 0 10px 0;
+                margin: 5px 0 0px 0;
     
                 .item-top {
                     display: flex;
@@ -67,6 +75,8 @@
         }
     }
 
-
+    .skill-chip {
+        margin: 2px;
+    }
 
 }

@@ -11,6 +11,35 @@ import { useParams } from 'react-router';
 
 const Context = createContext('sun nameA');
 
+const LoadingText = () => {
+  const [users, setUsers] = useState<{name: string, id: string}[]>([])
+  const [isLoading, setIsLoading] = useState(false)
+
+  const fetchData = async () => {
+    const response = await fetch("https://jsonplaceholder.typicode.com/users")
+    const data = await response.json()
+    setUsers(data)
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  return (
+    <div>
+      {isLoading && <p>Loading...</p>}
+      {users.length > 0 && (
+        <ul>
+          {users.map(user => (
+            <li key={user.id}>{user.name}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  )
+}
+
+
 const TestChildA = ({ name, func }: { name: string, func: React.Dispatch<React.SetStateAction<string>>}) => {
   const onClick = () => {
     func('update child name a');
@@ -75,6 +104,7 @@ function TestPage({ name, count = 0 }: IPageBaseProps) {
         <Context.Provider value={nameA}>
           <TestChildA name={nameA}  func={setDataA} />
         </Context.Provider>
+        <LoadingText/>
       </header>
     </div>
   );

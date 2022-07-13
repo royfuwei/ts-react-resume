@@ -1,9 +1,11 @@
+$lineColor: #BDC3C7;
+
 .ProjectItem {
     position: relative;
 
     ul {
         &:before {
-            background-color: rgb(85, 120, 170);
+            background-color: $lineColor;
             position: absolute;
             content: '';
             top: 0px;
@@ -28,11 +30,39 @@
             padding: 0 0 40px 0;
             display: flex;
             justify-content: end;
+            flex-wrap: wrap;
         }
 
         .content-image {
+            position: relative;
             min-height: 240px;
-            background-color: bisque;
+            background-color: $lineColor;
+
+            
+            &:hover {
+                .exit-to {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: rgba(255,255,255, 0.5);
+                }
+            }
+
+            .exit-to {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 1;
+                display: none;
+                font-weight: bold;
+                &>a {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
         }
 
         .content-info {
@@ -50,6 +80,7 @@
 
             .info-top {
                 position: relative;
+                width: 100%;
 
                 .info-title {
                     font-size: calc(12px + 1vmin);
@@ -58,9 +89,18 @@
                 }
 
                 .info-subTitle {
+                    position: relative;
                     font-size: calc(8px + 1vmin);
                     color: #626567;
                     margin-top: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: start;
+                    flex-wrap: wrap;
+                    .role {
+                        margin-right: 20px;
+                    }
                 }
             }
 
@@ -85,7 +125,7 @@
                 left: -5px;
                 right: 10px;
                 width: 90%;
-                background: rgb(85, 120, 170);
+                background: $lineColor;
 
                 -o-transition:.5s;
                 -ms-transition:.5s;
@@ -98,7 +138,7 @@
         .timeline-point {
             background-color: rgb(255, 255, 255);
             // transition: all 0.2s ease-in 0s;
-            outline:  rgb(85, 120, 170) solid 0.5rem;
+            outline:  $lineColor solid 0.5rem;
             display: inline-block;
             margin: 1rem 0.5rem 0.5rem -0.5rem;
             position: absolute;
