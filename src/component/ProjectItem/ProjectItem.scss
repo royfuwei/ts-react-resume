@@ -3,7 +3,7 @@ $lineColor: #BDC3C7;
 .ProjectItem {
     position: relative;
 
-    ul {
+    &>ul {
         &:before {
             background-color: $lineColor;
             position: absolute;
@@ -33,34 +33,41 @@ $lineColor: #BDC3C7;
             flex-wrap: wrap;
         }
 
-        .content-image {
+        .content-grid {
+            // background-color: aqua;
+            // padding: 0;
+            // margin: 0;
             position: relative;
-            min-height: 240px;
-            background-color: $lineColor;
-
-            
-            &:hover {
-                .exit-to {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    background: rgba(255,255,255, 0.5);
+            .content-image {
+                position: relative;
+                min-height: 250px;
+                background-color: $lineColor;
+    
+                
+                &:hover {
+                    .exit-to {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background: rgba(0,0,0, 0.8);
+                        color: white;
+                    }
                 }
-            }
-
-            .exit-to {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                opacity: 1;
-                display: none;
-                font-weight: bold;
-                &>a {
+    
+                .exit-to {
                     position: absolute;
-                    top: 0;
-                    left: 0;
                     width: 100%;
                     height: 100%;
+                    opacity: 1;
+                    display: none;
+                    font-weight: bold;
+                    &>a {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
             }
         }

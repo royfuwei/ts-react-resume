@@ -77,7 +77,8 @@ export const ProjectItemComponent = ({ content = ProjectList, }: ICompoenetBaseP
                                 <div></div>
                                 
                             </Grid>
-                            <Grid item md={6} xs={12} >
+                            <Grid className="content-grid" item md={6} xs={12} >
+                            
                                 <Box className="content-image" sx={{
                                     width: '100%',
                                     height: '100%',
@@ -87,8 +88,8 @@ export const ProjectItemComponent = ({ content = ProjectList, }: ICompoenetBaseP
                                     backgroundImage: `url(${images.length > 0 ? images[0].path : getDefaultByIndex(index)})`,
                                     backgroundRepeat: 'no-repeat',
                                     backgroundPosition: 'center',
-                                    backgroundSize: 'cover',
-                                    opacity: url !== undefined ? 0.8 : 0.5,
+                                    backgroundSize: 'contain',
+                                    opacity: url !== undefined ? 0.9 : 0.9,
                                     '&:hover': {
                                         // backgroundColor: 'primary.main',
                                         // opacity: [0.5, 0.4, 0.3],

@@ -101,7 +101,7 @@ export class ResumeService {
                         description: `
 - 基礎PHP 後端開發，有使用過Laravel 使用經驗。
                         `,
-                        rating: 3,
+                        rating: 2,
                     },
                 ],
                 chips: ['Nodejs', 'Express', 'Golang', 'Gin', 'PHP', 'Laravel'],
@@ -131,14 +131,14 @@ export class ResumeService {
                         description: `
 - Reactjs 基本操作(使用TypeScript, tsx)，使用Material UI。
                         `,
-                        rating: 3.5,
+                        rating: 2.5,
                     },
                     {
                         name: 'Flutter',
                         description: `
 - 有案子需要APP Demo，用Flutter 做Android, IOS 前端Demo APP。
                         `,
-                        rating: 3.5,
+                        rating: 2.5,
                     },
                 ],
                 chips: [
@@ -193,7 +193,7 @@ export class ResumeService {
                         description: `
 - 有搭配PostGIS 使用過。
                         `,
-                        rating: 4,
+                        rating: 2.5,
                     },
                 ],
                 chips: [
@@ -201,14 +201,45 @@ export class ResumeService {
                 ],
             },
             {
-                title: '其他工具',
+                title: '其他開發相關 Devops',
                 description: `
-Devops: 
                 `,
                 content: [
                 ],
                 chips: [
-                    'Docker', 'K8S', 'Git', 'Drone', 'GitLab', 'SonarQube', 'Helm', 'Docker Harbor',
+                    'Docker', 'K8S', 'Git', 'Drone', 'GitLab', 'SonarQube', 'Helm', 'Docker Harbor','Linux', 'CentOS', 'Ubuntu',
+                ],
+            },
+            {
+                title: '其他工具',
+                description: ``,
+                content: [
+                    {
+                        name: 'Drawio',
+                        description: `
+- 規劃前後端程式流程使用。
+                        `,
+                        rating: 3,
+                    },
+                    {
+                        name: 'Figma',
+                        description: `
+
+                        `,
+                        rating: 3,
+                    },
+                ],
+                chips: [
+                    'Drawio', 'Figma',
+                ],
+            },
+            {
+                title: '地理資訊類',
+                description: ``,
+                content: [
+                ],
+                chips: [
+                    'ArcGIS', 'QGIS', 'GeoServer'
                 ],
             },
         ];
