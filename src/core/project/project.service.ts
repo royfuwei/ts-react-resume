@@ -123,7 +123,7 @@ export class ProjectService {
                     }
                 ],
                 skills: [
-                    'Html', 'JavaScript', 'CSS', 'Nodejs', 'Express', 'Redis', 'Docker', 'PostgreSQL', 'Nginx'
+                    'Nodejs', 'Express', 'Redis', 'Docker', 'PostgreSQL', 'Nginx'
                 ],
             },
             {

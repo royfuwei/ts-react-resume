@@ -16,7 +16,7 @@ export const FooterLayout = () => {
           <div className='footer-line'></div>
           <div className="footer-side">
             <Grid container spacing={{ md: 3, xs: 1}}>
-              <Grid item md={4} xs={12}>
+              <Grid item md={3} xs={12}>
                 <div className="footer-side-item">
                   <div className="title">
                     Email
@@ -26,11 +26,19 @@ export const FooterLayout = () => {
                   </div>
                 </div>
               </Grid>
-              <Grid item md={4} xs={12}>
+              <Grid item md={3} xs={12}>
                 <div className="footer-side-item">
+                  <div className="title">
+                    GitHub
+                  </div>
+                  <div className="value">
+                    <a href="https://github.com/royfuwei" target="_blank" rel="noreferrer">Roy Chuang</a>
+                  </div>
                 </div>
               </Grid>
-              <Grid item md={4} xs={12}>
+              <Grid item md={3} xs={12}>
+              </Grid>
+              <Grid item md={3} xs={12}>
                 <div className='footer-side-item footer-copyright'>
                   © { year } By royfuwei.
                 </div>
