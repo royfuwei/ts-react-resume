@@ -8,7 +8,9 @@ ENV SCARF_ANALYTICS=false
 WORKDIR ${SOURCE_DIR}
 
 COPY ./*.json  ./
-RUN npm ci --include=dev
+COPY ./craco.config.js ./
+# RUN npm ci --include=dev
+RUN yarn install --frozen-lockfile --include=dev
 
 COPY ./public ./public
 COPY ./src ./src
