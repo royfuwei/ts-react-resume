@@ -2,9 +2,10 @@ import { Grid } from '@mui/material';
 import { ICompoenetBaseProps } from '../../domain/interface/compoenents/base';
 import { InfoTimelineInterface } from '../../domain/interface/infoTimeline';
 import './InfoTimeline.scss';
+import ReactMarkdown from 'react-markdown';
 
 
-export const InfoTimelineComponent = ({ content = { title: '', content: [],} }: ICompoenetBaseProps<InfoTimelineInterface>) => {
+export const InfoTimelineComponent = ({ content = { title: '', content: [], subTitle: ''} }: ICompoenetBaseProps<InfoTimelineInterface>) => {
     const getContentHtml = () => {
         return content.content.map(
             ({ title, subTitle, detail, startStr, endStr }, index) => {
@@ -31,7 +32,9 @@ export const InfoTimelineComponent = ({ content = { title: '', content: [],} }: 
                                     </div>
                                 </div>
                                 <div className='ttl-content-detail'>
-                                    { detail }
+                                        <ReactMarkdown>
+                                            { detail }
+                                        </ReactMarkdown>
                                 </div>
                             </Grid>
                         </Grid>
@@ -44,6 +47,9 @@ export const InfoTimelineComponent = ({ content = { title: '', content: [],} }: 
             <Grid container spacing={{ xs: 1, md: 2}} >
                 <Grid className='title' item xs={12} md={6} >
                     { content.title }
+                    <div className='subTitle'>
+                        { content.subTitle }
+                    </div>
                 </Grid>
                 <Grid item xs={12} md={6} >
                     {getContentHtml()}
