@@ -6,9 +6,19 @@ export interface ProjectItemInterface {
     role: string;
     detail: string;
     url?: string;
+    links?: IProjectItemLinks[];
     images: ProjectItemImageDTO[];
     skills: string[];
     startStr: string;
     endStr: string;
 };
 
+export interface IProjectItemLinks {
+    linkType: ProjectItemLinkEnum;
+    href: string;
+}
+
+export enum ProjectItemLinkEnum {
+    GitHub,
+    Web,
+}

@@ -1,12 +1,15 @@
-import { Box, Chip, Grid, Icon } from "@mui/material";
+import { Box, Chip, Grid, Icon, Tooltip } from "@mui/material";
 import ReactMarkdown from "react-markdown";
 import { ICompoenetBaseProps } from "../../domain/interface/compoenents/base";
-import { ProjectItemInterface } from "../../domain/interface/project.interface";
+import { IProjectItemLinks, ProjectItemInterface, ProjectItemLinkEnum } from "../../domain/interface/project.interface";
 import './ProjectItem.scss';
 import defaultProjectImage from '../../assets/images/project.jpg';
 import defaultProjectImage1 from '../../assets/images/project1.jpg';
 import defaultProjectImage2 from '../../assets/images/project2.jpg';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import { Launch } from "@mui/icons-material";
+import IconButton from '@mui/material/IconButton';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 const ProjectList: ProjectItemInterface[] = [
     {
@@ -17,6 +20,7 @@ const ProjectList: ProjectItemInterface[] = [
         startStr: '2017/01',
         endStr: '2017/05',
         images: [],
+        links: [],
         skills: [
             'Html', 'JavaScript', 'CSS', 'PHP', 'GIS', 'Cesium.js', 'jQuery'
         ],
@@ -39,9 +43,36 @@ export const ProjectItemComponent = ({ content = ProjectList, }: ICompoenetBaseP
         const idx = index % defaultProjectImages.length;
         return defaultProjectImages[idx];
     }
+    const getProjectLinks = (links: IProjectItemLinks[]) => {
+        const linkItemList = links.map(({href, linkType}) => {
+            switch (linkType) {
+                case (ProjectItemLinkEnum.GitHub):
+                    return (
+                        <Tooltip title="前往GitHub">
+                            <IconButton aria-label="github" href={href}>
+                                <GitHubIcon></GitHubIcon>
+                            </IconButton>
+                        </Tooltip>
+                    )
+                default:
+                    return (
+                        <Tooltip title="前往頁面">
+                            <IconButton aria-label="link" href={href} target="">
+                                <Launch></Launch>
+                            </IconButton>
+                        </Tooltip>
+                    )
+            }
+        })
+        return (
+            <div className="info-title-link">
+                {linkItemList}
+            </div>
+        )
+    }
     const getContentHtml = () => {
         return content.map(
-            ({ title, subTitle, detail, startStr, endStr, skills, images, url, role}, index) => {
+            ({ title, subTitle, detail, startStr, endStr, skills, images, url, role, links}, index) => {
                 return (
                     <div key={title} className="pic-content">
                         <div className="timeline-point"></div>
@@ -56,6 +87,7 @@ export const ProjectItemComponent = ({ content = ProjectList, }: ICompoenetBaseP
                                     
                                     <div className="info-title">
                                         { title }
+                                        { links ? getProjectLinks(links) : '' }
                                     </div>
                                     <div className="info-subTitle">
                                         <div className="subtitle">
@@ -95,15 +127,6 @@ export const ProjectItemComponent = ({ content = ProjectList, }: ICompoenetBaseP
                                         // opacity: [0.5, 0.4, 0.3],
                                     },
                                 }}>
-                                    <div className="exit-to"
-                                        style={ url !== undefined ? {} : {
-                                            display: 'none'
-                                        } }
-                                    >
-                                        前往專案 <ExitToAppIcon fontSize="large"/>
-                                        <a href={ url } target={'_blank'} rel="noreferrer" >
-                                        </a>
-                                    </div>
                                 </Box>
                             </Grid>
                             
