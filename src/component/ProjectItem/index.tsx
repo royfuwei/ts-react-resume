@@ -49,7 +49,7 @@ export const ProjectItemComponent = ({ content = ProjectList, }: ICompoenetBaseP
                 case (ProjectItemLinkEnum.GitHub):
                     return (
                         <Tooltip title="前往GitHub">
-                            <IconButton aria-label="github" href={href}>
+                            <IconButton aria-label="github" href={href} target="_blank">
                                 <GitHubIcon></GitHubIcon>
                             </IconButton>
                         </Tooltip>
@@ -57,7 +57,7 @@ export const ProjectItemComponent = ({ content = ProjectList, }: ICompoenetBaseP
                 default:
                     return (
                         <Tooltip title="前往頁面">
-                            <IconButton aria-label="link" href={href} target="">
+                            <IconButton aria-label="link" href={href} target="_blank">
                                 <Launch></Launch>
                             </IconButton>
                         </Tooltip>
