@@ -1,4 +1,4 @@
-import { ProjectItemInterface, ProjectItemLinkEnum } from "../../domain/interface/project.interface";
+import { ProjectItemInterface } from "../../domain/interface/project.interface";
 import { ProjectItemImageType } from "../../domain/dto/project.dto";
 // import ProjectGfForest from '../../assets/images/project-gf-forest.png';
 import ProjectRxjsTodoList from '../../assets/images/project-rxjs-todolist.png';
@@ -15,6 +15,7 @@ import ProjectGfNavvisVghtc from '../../assets/images/project-gf-navvis-vghtc.pn
 import ProjectGfNavvisYilan from '../../assets/images/project-gf-navvis-yilan.png';
 import ProjectGrandsysInu from '../../assets/images/project-grandsys-inu.png';
 import ProjectGrandsysInu2 from '../../assets/images/project-grandsys-inu2.png';
+import { LinkItemTypeEnum } from "../../domain/interface/ILinkItem";
 
 export class ProjectService {
 
@@ -39,7 +40,7 @@ export class ProjectService {
                 ],
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.Web,
+                        linkType: LinkItemTypeEnum.Web,
                         href: 'http://salesdemo.geoforce.com.tw/demo/yilan/yilan_iot/',
                     }
                 ],
@@ -82,7 +83,7 @@ export class ProjectService {
                 role: '軟體設計工程師',
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.Web,
+                        linkType: LinkItemTypeEnum.Web,
                         href: 'http://idm.e-land.gov.tw/indoor',
                     }
                 ],
@@ -111,7 +112,7 @@ export class ProjectService {
                 url: 'https://map.vghtc.gov.tw/',
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.Web,
+                        linkType: LinkItemTypeEnum.Web,
                         href: 'https://map.vghtc.gov.tw/',
                     }
                 ],
@@ -140,7 +141,7 @@ export class ProjectService {
                 url: 'https://gis.iatyu.nat.gov.tw/',
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.Web,
+                        linkType: LinkItemTypeEnum.Web,
                         href: 'https://gis.iatyu.nat.gov.tw/',
                     }
                 ],
@@ -230,11 +231,11 @@ export class ProjectService {
                 ],
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.Web,
+                        linkType: LinkItemTypeEnum.Web,
                         href: '#',
                     },
                     {
-                        linkType: ProjectItemLinkEnum.GitHub,
+                        linkType: LinkItemTypeEnum.GitHub,
                         href: 'https://github.com/royfuwei/ts-react-resume',
                     },
                 ],
@@ -259,11 +260,11 @@ export class ProjectService {
                 ],
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.Web,
+                        linkType: LinkItemTypeEnum.Web,
                         href: 'https://stackblitz.com/edit/rxjs-xqvung',
                     },
                     {
-                        linkType: ProjectItemLinkEnum.GitHub,
+                        linkType: LinkItemTypeEnum.GitHub,
                         href: 'https://github.com/royfuwei/rxjs-todo-list',
                     },
                 ],
@@ -289,7 +290,7 @@ export class ProjectService {
                 ],
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.GitHub,
+                        linkType: LinkItemTypeEnum.GitHub,
                         href: 'https://github.com/royfuwei/ts-nestjs-arch',
                     },
                 ],
@@ -314,7 +315,7 @@ export class ProjectService {
                 ],
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.GitHub,
+                        linkType: LinkItemTypeEnum.GitHub,
                         href: 'https://github.com/royfuwei/go-clean-arch',
                     },
                 ],
@@ -340,7 +341,7 @@ export class ProjectService {
                 ],
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.GitHub,
+                        linkType: LinkItemTypeEnum.GitHub,
                         href: 'https://github.com/royfuwei/playground-go-api',
                     },
                 ],
@@ -365,7 +366,7 @@ export class ProjectService {
                 ],
                 links: [
                     {
-                        linkType: ProjectItemLinkEnum.GitHub,
+                        linkType: LinkItemTypeEnum.GitHub,
                         href: 'https://github.com/royfuwei/aspnetcore-clean-arch',
                     },
                 ],

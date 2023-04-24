@@ -1,4 +1,5 @@
 import { ProjectItemImageDTO } from "../dto/project.dto";
+import { ILinkItem } from "./ILinkItem";
 
 export interface ProjectItemInterface {
     title: string;
@@ -6,19 +7,9 @@ export interface ProjectItemInterface {
     role: string;
     detail: string;
     url?: string;
-    links?: IProjectItemLinks[];
+    links?: ILinkItem[];
     images: ProjectItemImageDTO[];
     skills: string[];
     startStr: string;
     endStr: string;
 };
-
-export interface IProjectItemLinks {
-    linkType: ProjectItemLinkEnum;
-    href: string;
-}
-
-export enum ProjectItemLinkEnum {
-    GitHub,
-    Web,
-}

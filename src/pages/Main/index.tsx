@@ -5,6 +5,8 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm';
 import { UserService } from '../../core/user/user.service';
 import { useEffect, useState } from 'react';
+import { ILinkItem } from '../../domain/interface/ILinkItem';
+import { LinkItemListComponent } from '../../component/LinkItemList';
 
 
 export const MainPage = () => {
@@ -12,13 +14,17 @@ export const MainPage = () => {
     const [ aboutMe, setAboutMe ] = useState(`
 大家好...
     `);
+    const [ myLinks, setMyLinks ] = useState<ILinkItem[]>()
     const asyncData = async () => {
         const data = await userService.getAboutMe();
+        const links = await userService.getMyLinks();
         setAboutMe(data.aboutMe);
+        setMyLinks(links);
     };
 
     useEffect(() => {
         asyncData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
@@ -58,7 +64,7 @@ export const MainPage = () => {
                                     </ReactMarkdown>
                                 </div>
                                 <div className="main-info-link">
-                                    
+                                    <LinkItemListComponent content={myLinks}/>
                                 </div>
                             </div>
                             <br />
