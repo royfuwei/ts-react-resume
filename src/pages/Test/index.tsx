@@ -62,7 +62,7 @@ const TestSun = () => {
   );
 }
 
-function TestPage({ name, count = 0 }: IPageBaseProps) {
+function TestPage({ name, count = 0 }: IPageBaseProps<any>) {
   const testService = new TestService();
   const [nameA, setDataA] = useState('nameA');
   const device = useRWD();

@@ -10,10 +10,12 @@ import { useEffect, useState } from 'react';
 
 let educationConfig: InfoTimelineInterface = {
     title: '學歷',
+    subTitle: '',
     content: [],
 };
 let workConfig: InfoTimelineInterface = {
     title: '工作經驗',
+    subTitle: '',
     content: [],
 };
 

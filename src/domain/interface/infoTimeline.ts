@@ -1,5 +1,6 @@
 export interface InfoTimelineInterface {
     title: string;
+    subTitle: string;
     content: InfoTimelineSubInterface[];
 
 };
