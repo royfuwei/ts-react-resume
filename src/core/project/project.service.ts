@@ -1,6 +1,12 @@
-import { ProjectItemInterface } from "../../domain/interface/project.interface";
+import { ProjectItemInterface, ProjectItemLinkEnum } from "../../domain/interface/project.interface";
 import { ProjectItemImageType } from "../../domain/dto/project.dto";
-import ProjectGfForest from '../../assets/images/project-gf-forest.png';
+// import ProjectGfForest from '../../assets/images/project-gf-forest.png';
+import ProjectRxjsTodoList from '../../assets/images/project-rxjs-todolist.png';
+import ProjectAspnetCore from '../../assets/images/project-aspnetcore-clean-arch.png';
+import ProjectPgGoApi from '../../assets/images/project-playground-go-api.png';
+import ProjectGoCleanArch from '../../assets/images/project-go-clean-arch.png';
+import ProjectTsNestjsArch from '../../assets/images/project-ts-nestjs-arch.png';
+import ProjectReactResume from '../../assets/images/project-react-resume.png';
 import ProjectGfTia from '../../assets/images/project-gf-tia.png';
 import ProjectGfYilanIot from '../../assets/images/project-gf-yilan-iot.png';
 import ProjectGfYilan from '../../assets/images/project-gf-yilan.png';
@@ -12,7 +18,7 @@ import ProjectGrandsysInu2 from '../../assets/images/project-grandsys-inu2.png';
 
 export class ProjectService {
 
-    getProjectData() {
+    getWorkProjectData() {
         const ProjectList: ProjectItemInterface[] = [
             {
                 title: '宜蘭縣智慧營運中心(IOC) 雛型先導示範平台',
@@ -29,6 +35,12 @@ export class ProjectService {
                     {
                         type: ProjectItemImageType.ASSET,
                         path: ProjectGfYilanIot,
+                    }
+                ],
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.Web,
+                        href: 'http://salesdemo.geoforce.com.tw/demo/yilan/yilan_iot/',
                     }
                 ],
                 url: 'http://salesdemo.geoforce.com.tw/demo/yilan/yilan_iot/',
@@ -68,6 +80,12 @@ export class ProjectService {
 4. 開發路徑規劃，步行移動時間預測等功能，並且在專案使用Docker 容器化部署。
                 `,
                 role: '軟體設計工程師',
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.Web,
+                        href: 'http://idm.e-land.gov.tw/indoor',
+                    }
+                ],
                 url: 'http://idm.e-land.gov.tw/indoor',
                 startStr: '2018/05',
                 endStr: '2018/12',
@@ -91,6 +109,12 @@ export class ProjectService {
                 `,
                 role: '軟體設計工程師',
                 url: 'https://map.vghtc.gov.tw/',
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.Web,
+                        href: 'https://map.vghtc.gov.tw/',
+                    }
+                ],
                 startStr: '2018/05',
                 endStr: '2019/01',
                 images: [
@@ -104,29 +128,6 @@ export class ProjectService {
                 ],
             },
             {
-                title: '國有林防災應變及堰塞湖監測系統',
-                subTitle: '群立科技股份有限公司',
-                detail: `
-介接API 與部屬環境。
-1. 使用Nodejs 開發排程，介接雨量、河川水位API。
-2. 使用Nodejs Express 開發專案用API，將資料區分冷、熱資料，使用Redis 做快取。
-3. 在此專案使用Docker 容器化部署。
-                `,
-                role: '軟體設計工程師',
-                url: 'https://qlakenew.forest.gov.tw/public/',
-                startStr: '2018/11',
-                endStr: '2019/03',
-                images: [
-                    {
-                        type: ProjectItemImageType.ASSET,
-                        path: ProjectGfForest,
-                    }
-                ],
-                skills: [
-                    'Nodejs', 'Express', 'Redis', 'Docker', 'PostgreSQL', 'Nginx'
-                ],
-            },
-            {
                 title: '桃園農田水利會圖資平台',
                 subTitle: '群立科技股份有限公司',
                 detail: `
@@ -137,6 +138,12 @@ export class ProjectService {
                 `,
                 role: '軟體設計工程師',
                 url: 'https://gis.iatyu.nat.gov.tw/',
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.Web,
+                        href: 'https://gis.iatyu.nat.gov.tw/',
+                    }
+                ],
                 startStr: '2018/12',
                 endStr: '2019/07',
                 images: [
@@ -173,21 +180,14 @@ export class ProjectService {
                 title: '語音質檢產品開發',
                 subTitle: '德鴻科技股份有限公司',
                 detail: `
-主要工作有:
-1. 語音質檢產品開發:
-  - 微服務架構開發，依需求使用Typescript,Golang，開發產品API。
-  - 研究MongoDB、ElasticSearch、RabbitMQ相關應用，針對產品的需求，導入適合的技術設計API。
-  - 前後端程式設計及單元測試、設計文件撰寫。
-
-2. 重構一代產品，改善架構，更容易修改:
-  - 以DDD(領域驅動開發)、TDD(測試驅動開發) 等開發模式為目標，設計開發架構。
-  - 使用Clean Architecture 重構原有Golang 服務。
-  - 使用Nestjs 框架重構原有Node/Express 服務。
-
-3. 優化CI/CD 流程: 
-  - 協助依據不同客戶配置客製化參數，使用drone, helm3 自動化產生不同專案配置，方便到客戶端上架。
-
-4. 協助維護人員到客戶端K8S部署，以及產品服務除錯。
+- 參與 語音質檢產品 微服務架構開發。
+- 使用Nestjs 共同開發語音質檢評分服務。
+- 使用Nestjs 開發人員管理 RESTful CRUD API 與 JWT 驗證。
+- 使用Nestjs 開發Email 排程設定、推送 API，提供其他部門使用。
+- 使用Nestjs 開發整合客戶資訊服務。
+- 使用Go gin 開發API，依據Clean Architecture 重構語音文本處理服務。
+- 使用 MongoDB Aggregate 產生報表資訊。
+- 到客戶端K8S更新部署，以及產品服務排查。
                 `,
                 role: '資深工程師',
                 startStr: '2019/12',
@@ -209,5 +209,173 @@ export class ProjectService {
             
         ];
         return ProjectList.reverse();
+    }
+    getProjectData() {
+        const ProjectList: ProjectItemInterface[] = [
+            {
+                title: 'Royfuwei Portfolio',
+                subTitle: '',
+                detail: `
+使用React, MUI 製作的作品集網站
+自架server 用docker 部署
+                `,
+                role: '',
+                startStr: '',
+                endStr: '',
+                images: [
+                    {
+                        type: ProjectItemImageType.ASSET,
+                        path: ProjectReactResume,
+                    }
+                ],
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.Web,
+                        href: '#',
+                    },
+                    {
+                        linkType: ProjectItemLinkEnum.GitHub,
+                        href: 'https://github.com/royfuwei/ts-react-resume',
+                    },
+                ],
+                skills: [
+                    'Html', 'TypeScript', 'CSS', 'React', 'MUI', 'SCSS', 'Docker', 'docker-compose'
+                ],
+            },
+            {
+                title: 'rxjs-todo-list',
+                subTitle: '',
+                detail: `
+使用StackBilitz 線上編輯，實作RxJS TodoList。
+                `,
+                role: '',
+                startStr: '',
+                endStr: '',
+                images: [
+                    {
+                        type: ProjectItemImageType.ASSET,
+                        path: ProjectRxjsTodoList,
+                    }
+                ],
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.Web,
+                        href: 'https://stackblitz.com/edit/rxjs-xqvung',
+                    },
+                    {
+                        linkType: ProjectItemLinkEnum.GitHub,
+                        href: 'https://github.com/royfuwei/rxjs-todo-list',
+                    },
+                ],
+                skills: [
+                    'Bootstrap', 'HTML', 'RxJS', 'TypeScript'
+                ],
+            },
+            {
+                title: 'ts-nestjs-arch',
+                subTitle: '',
+                detail: `
+依據nestjs 有的DI裝飾器去做延伸設計，使專案可以分為共用Module，
+可依據不同專案的資料夾，注入專案的Module，減少共用模組重複開發。
+                `,
+                role: '',
+                startStr: '',
+                endStr: '',
+                images: [
+                    {
+                        type: ProjectItemImageType.ASSET,
+                        path: ProjectTsNestjsArch,
+                    }
+                ],
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.GitHub,
+                        href: 'https://github.com/royfuwei/ts-nestjs-arch',
+                    },
+                ],
+                skills: [
+                    'Nestjs', 'TypeScript',
+                ],
+            },
+            {
+                title: 'go-clean-arch',
+                subTitle: '',
+                detail: `
+依據Clean Architecture，以及參考bxcode/go-clean-arch 開發結構想法去做延伸。
+                `,
+                role: '',
+                startStr: '',
+                endStr: '',
+                images: [
+                    {
+                        type: ProjectItemImageType.ASSET,
+                        path: ProjectGoCleanArch,
+                    }
+                ],
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.GitHub,
+                        href: 'https://github.com/royfuwei/go-clean-arch',
+                    },
+                ],
+                skills: [
+                    'Go', 'Gin', 'Clean Architecture',
+                ],
+            },
+            {
+                title: 'playground-go-api',
+                subTitle: '',
+                detail: `
+使用go-clean-arch, MongoDB 實做一些項目，
+像是user, jwt, sms
+                `,
+                role: '',
+                startStr: '',
+                endStr: '',
+                images: [
+                    {
+                        type: ProjectItemImageType.ASSET,
+                        path: ProjectPgGoApi,
+                    }
+                ],
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.GitHub,
+                        href: 'https://github.com/royfuwei/playground-go-api',
+                    },
+                ],
+                skills: [
+                    'Go', 'Gin', 'Clean Architecture', 'JWT', 'SMS', 'MongoDB'
+                ],
+            },
+            {
+                title: 'aspnetcore-clean-arch',
+                subTitle: '',
+                detail: `
+練習ASP.NET Core 開發，試著實作Clean Architecture, DDD 簡單的開發結構。
+                `,
+                role: '',
+                startStr: '',
+                endStr: '',
+                images: [
+                    {
+                        type: ProjectItemImageType.ASSET,
+                        path: ProjectAspnetCore,
+                    }
+                ],
+                links: [
+                    {
+                        linkType: ProjectItemLinkEnum.GitHub,
+                        href: 'https://github.com/royfuwei/aspnetcore-clean-arch',
+                    },
+                ],
+                skills: [
+                    'C#', 'DDD', 'Clean Architecture', 'Entity Framework Core', 'SQLServer'
+                ],
+            },
+            
+            
+        ];
+        return ProjectList;
     }
 }

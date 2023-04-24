@@ -5,6 +5,7 @@ export class ResumeService {
     async getEducationData() {
         const result: InfoTimelineInterface = {
             title: '學歷',
+            subTitle: '',
             content: [
                 {
                     title: '桃園市立陽明高級中等學校',
@@ -28,46 +29,47 @@ export class ResumeService {
     async getWorkData() {
         const result: InfoTimelineInterface = {
             title: '工作經驗',
+            subTitle: '目前累積約有3.5年的網頁應用與網頁服務器的開發經驗，曾參與各項專案開發，以及產品開發。',
             content: [
                 {
-                    title: '系上雷射切割機操作人員',
-                    subTitle: '銘傳大學 都市規劃與防災學系',
-                    detail: '',
-                    startStr: '2015/03',
-                    endStr: '2017/04',
-                },
-                {
-                    title: '宜蘭縣人行道gis數化',
-                    subTitle: '銘傳大學 都市規劃與防災學系',
-                    detail: '',
-                    startStr: '2016/03',
-                    endStr: '2016/12',
-                },
-                {
                     title: '實習生',
                     subTitle: '群立科技股份有限公司',
-                    detail: '',
+                    detail: `
+- 自學程式語言
+- 開發WebGIS 平台:
+    宜蘭縣智慧營運中心(IOC) 雛型先導示範平台
+                    `,
                     startStr: '2016/07',
-                    endStr: '2016/08',
-                },
-                {
-                    title: '實習生',
-                    subTitle: '群立科技股份有限公司',
-                    detail: '',
-                    startStr: '2017/01',
                     endStr: '2017/05',
                 },
                 {
                     title: '軟體開發工程師',
                     subTitle: '群立科技股份有限公司',
-                    detail: '',
+                    detail: `
+負責公司代理的應用開發，以及負責協助公司其他部門的專案。
+- 公司代理產品(*NavVis* 移動光達系統)的應用開發。
+- 基於Navvis 路徑規劃，開發Web 逐步導航等功能。
+- 整合客戶端資訊、介接外部API， 視覺化平台呈現資訊。
+- 推動Docker 容器化部署，將專案容器化分版管理。
+- 推動用REST API方式做前後端分離，導入Nestjs作為後端開發。
+- 因應Kiosk 使用需求，使用Electron 包裝跨平台應用。
+                    `,
                     startStr: '2018/05',
                     endStr: '2019/07',
                 },
                 {
                     title: '資深工程師',
                     subTitle: '德鴻科技股份有限公司',
-                    detail: '',
+                    detail: `
+參與**語音質檢產品**微服務架構開發。
+- 使用Nestjs 共同開發語音質檢評分服務。
+- 使用Nestjs 開發人員管理 RESTful CRUD API 與 JWT 驗證。
+- 使用Nestjs 開發Email 排程設定、推送 API。
+- 使用Nestjs 開發整合客戶資訊服務。
+- 使用Go gin 開發API，依據Clean Architecture 重構語音文本處理服務。
+- 使用 MongoDB Aggregate 產生報表資訊。
+- 到客戶端K8S更新部署，以及產品服務排查。
+                    `,
                     startStr: '2019/12',
                     endStr: '2022/02',
                 },
@@ -96,15 +98,8 @@ export class ResumeService {
                         `,
                         rating: 4,
                     },
-                    {
-                        name: 'PHP',
-                        description: `
-- 基礎PHP 後端開發，有使用過Laravel 使用經驗。
-                        `,
-                        rating: 2,
-                    },
                 ],
-                chips: ['Nodejs', 'Express', 'Golang', 'Gin', 'PHP', 'Laravel'],
+                chips: ['Nodejs', 'Express', 'Golang', 'Gin'],
             },
             {
                 title: '前端程式語言與框架',
@@ -133,16 +128,9 @@ export class ResumeService {
                         `,
                         rating: 2.5,
                     },
-                    {
-                        name: 'Flutter',
-                        description: `
-- 有案子需要APP Demo，用Flutter 做Android, IOS 前端Demo APP。
-                        `,
-                        rating: 2.5,
-                    },
                 ],
                 chips: [
-                    'HTML', 'CSS', 'SCSS', 'ReactJS', 'JavaScript', 'TypeScript', 'Flutter', 'MUI'
+                    'HTML', 'CSS', 'SCSS', 'ReactJS', 'JavaScript', 'TypeScript', 'MUI'
                 ],
             },
             {
@@ -164,13 +152,6 @@ export class ResumeService {
                         rating: 4,
                     },
                     {
-                        name: 'Redis',
-                        description: `
-- 基礎Redis: 在開發上設計資料冷熱區，有使用過Redis 作為熱資料使用。
-                        `,
-                        rating: 2,
-                    },
-                    {
                         name: 'RabbitMQ',
                         description: `
 - RabbitMQ: 使用RabbitMQ，作為各服務功能流程處理。
@@ -178,7 +159,7 @@ export class ResumeService {
                         rating: 3.5,
                     },
                 ],
-                chips: ['MongoDB', 'ElasticSearch', 'Mongoose', 'Go: mongo-driver', 'Redis', 'RabbitMQ'],
+                chips: ['MongoDB', 'ElasticSearch', 'Mongoose', 'Go: mongo-driver', 'RabbitMQ'],
             },
             {
                 title: '資料庫相關 SQL',
@@ -203,34 +184,13 @@ export class ResumeService {
             {
                 title: '其他開發相關 Devops',
                 description: `
+- 閒暇之餘用自己的電腦，串起GitLab, Drone, SonarQube, Docker Harbor 的CI流程。
+- 也有用過Kind(K8S in docker)架起K8S環境練習部署。
                 `,
                 content: [
                 ],
                 chips: [
                     'Docker', 'K8S', 'Git', 'Drone', 'GitLab', 'SonarQube', 'Helm', 'Docker Harbor','Linux', 'CentOS', 'Ubuntu',
-                ],
-            },
-            {
-                title: '其他工具',
-                description: ``,
-                content: [
-                    {
-                        name: 'Drawio',
-                        description: `
-- 規劃前後端程式流程使用。
-                        `,
-                        rating: 3,
-                    },
-                    {
-                        name: 'Figma',
-                        description: `
-
-                        `,
-                        rating: 3,
-                    },
-                ],
-                chips: [
-                    'Drawio', 'Figma',
                 ],
             },
             {
