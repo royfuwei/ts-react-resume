@@ -1,7 +1,6 @@
 import { IconButton, Tooltip } from "@mui/material";
 import { ILinkItem, LinkItemTypeEnum } from "../../domain/interface/ILinkItem";
 import { ICompoenetBaseProps } from "../../domain/interface/compoenents/base";
-import { ProjectItemLinkEnum } from "../../domain/interface/project.interface";
 import { Launch } from "@mui/icons-material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -19,7 +18,7 @@ export const LinkItemListComponent = ({ content = [] }: ICompoenetBaseProps<ILin
                 )
             case (LinkItemTypeEnum.LinkedIn):
                 return (
-                    <Tooltip title="前往GitHub">
+                    <Tooltip title="前往LinkedIn">
                         <IconButton aria-label="LinkedIn" href={href} target="_blank">
                             <LinkedInIcon></LinkedInIcon>
                         </IconButton>
